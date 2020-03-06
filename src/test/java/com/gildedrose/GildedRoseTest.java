@@ -82,7 +82,20 @@ class GildedRoseTest {
 		app.updateQuality();
 		assertEquals("Sulfuras, Hand of Ragnaros, 0, 80", app.items[0].toString());
 		assertEquals("Sulfuras, Hand of Ragnaros, -1, 80", app.items[1].toString());
-	
 	}
+	  @Test
+	    public void oneDayPassedConjuredTest() {
+	        Item[] items = new Item[]{new Item("Conjured Mana Cake", 2, 10)};
+	        GildedRose app = new GildedRose(items);
+	        assertEquals("Conjured Mana Cake, 2, 10", app.items[0].toString());
+	        app.updateQuality();
+	        assertEquals("Conjured Mana Cake, 1, 8", app.items[0].toString());
+	        app.updateQuality();
+	        assertEquals("Conjured Mana Cake, 0, 6", app.items[0].toString());
+	        app.updateQuality();
+	        assertEquals("Conjured Mana Cake, -1, 2", app.items[0].toString());
+	        app.updateQuality();
+	        assertEquals("Conjured Mana Cake, -2, 0", app.items[0].toString());
+	    }
 
 }

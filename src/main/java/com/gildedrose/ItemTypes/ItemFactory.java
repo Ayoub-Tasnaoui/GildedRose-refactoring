@@ -15,6 +15,8 @@ public class ItemFactory {
             return new SulfurasItem(item);
         }else if (name.equals("Backstage passes to a TAFKAL80ETC concert")){
             return new BackstagePasseItem(item);
+        } else if (name.equals("Conjured Mana Cake")){
+            return new ConjuredItem(item);
         }
         return new NormalItem(item);
     }
